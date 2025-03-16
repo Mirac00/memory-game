@@ -1,0 +1,68 @@
+.game-board {
+    display: flex !important;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px; 
+    background-color: #2c3e50; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    padding:50px;
+  
+    .game-info {
+      text-align: center; 
+      p {
+        margin: 5px 0;
+      }
+      button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+  
+      .congratulations {
+        margin-top: 20px;
+        animation: popOut 0.5s ease-out; 
+        h2 {
+          font-size: 24px;
+          color: #1abc9c; 
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+        }
+      }
+    }
+  
+    .tiles-container {
+      display: grid;
+      gap: 10px;
+  
+      &.easy {
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: repeat(3, 100px);
+      }
+      &.medium {
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: repeat(4, 100px);
+      }
+      &.hard {
+        grid-template-columns: repeat(6, 100px);
+        grid-template-rows: repeat(6, 100px);
+      }
+    }
+  }
+  
+
+  @keyframes popOut {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
